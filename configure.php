@@ -115,14 +115,14 @@ foreach ($files as $file) {
         'Skeleton' => $className,
         ':package_description' => $description,
     ]);
-
-    match (true) {
-        str_contains($file, 'src/Skeleton.php') => rename($file, './src/' . $className . '.php'),
-        str_contains($file, 'src/SkeletonServiceProvider.php') => rename($file, './src/' . $className . 'ServiceProvider.php'),
-        str_contains($file, 'src/SkeletonFacade.php') => rename($file, './src/' . $className . 'Facade.php'),
-        str_contains($file, 'src/Commands/SkeletonCommand.php') => rename($file, './src/Commands/' . $className . 'Command.php'),
-        default => [],
-    };
+//
+//    match (true) {
+//        str_contains($file, 'src/Skeleton.php') => rename($file, './src/' . $className . '.php'),
+//        str_contains($file, 'src/SkeletonServiceProvider.php') => rename($file, './src/' . $className . 'ServiceProvider.php'),
+//        str_contains($file, 'src/SkeletonFacade.php') => rename($file, './src/' . $className . 'Facade.php'),
+//        str_contains($file, 'src/Commands/SkeletonCommand.php') => rename($file, './src/Commands/' . $className . 'Command.php'),
+//        default => [],
+//    };
 }
 
 confirm('Execute `composer install` and run tests?') && run('composer install && composer test');
